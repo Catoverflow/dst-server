@@ -29,3 +29,7 @@ docker run \
     --name dst-dedicated \
     -it dst-dedicated
 ~~~~
+## Known Issues
+
+- Mapping different ports for cave server will make it unusable. Once you enter the cave you will be locked out, as the master server keeps redirecting you to inaccessible cave server port outside the container.
+- If offline mode or LAN only option is on, only ports within range [10998, 11018] can be used. This is DST feature :）
