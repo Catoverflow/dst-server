@@ -18,7 +18,9 @@ Change the permission for mounted config and save files.
 chmod -R 777 ./MyDediServer
 ~~~~
 
-Change the arguments according to your settings. Base location is by default set to `/home/steam` in steamcmd.
+You can pull this script from docker hub: `catoverflow/dst-server`, or build yourself:
+
+> Change the arguments according to your settings. Base location is by default set to `/home/steam` in steamcmd.
 
 ~~~~shell
 docker build . -t dst-dedicated:latest
@@ -29,6 +31,8 @@ docker run \
     --name dst-dedicated \
     -it dst-dedicated
 ~~~~
+
+
 ## Known Issues
 
 - Mapping different ports for cave server will make it unusable. Once you enter the cave you will be locked out, as the master server keeps redirecting you to inaccessible cave server port outside the container.
