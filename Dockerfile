@@ -36,5 +36,5 @@ RUN mkdir -p "${HOMEDIR}/.klei/DoNotStarveTogether"
 # see readme
 # RUN echo -e "your base location is ${HOMEDIR}\"
 
-# CMD ["bash", "entry.sh"]
-ENTRYPOINT [ "sleep", "infinity" ]
+ENTRYPOINT ["bash", "entry.sh"]
+# ENTRYPOINT [ "sleep", "infinity" ]
