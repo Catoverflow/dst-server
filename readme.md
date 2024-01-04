@@ -23,8 +23,8 @@ Change the arguments according to your settings. Base location is by default set
 ~~~~shell
 docker build . -t dst-dedicated:latest
 docker run \
+    -p 10999:10999/udp \
     -p 11000:11000/udp \
-    -p 11001:11001/udp \
     -v $(pwd)/MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer \
     --name dst-dedicated \
     -it dst-dedicated
