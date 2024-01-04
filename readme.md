@@ -25,7 +25,7 @@ docker build . -t dst-dedicated:latest
 docker run \
     -p 11000:11000/udp \
     -p 11001:11001/udp \
-    -v MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer \
+    -v $(pwd)/MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer \
     --name dst-dedicated \
-    -it dst-dedicated &
+    -it dst-dedicated
 ~~~~
