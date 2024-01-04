@@ -12,7 +12,7 @@ You can adjust server settings specified in `.ini` files and DST world settings 
 
 Change the permission for mounted config and save files.
 
-> There should be a better way to do this but I don't know how
+> There should be a better way to do this but I don't know how. `steam` user is preset in steamcmd, which may have different uid to host user, and to simplify the running process I move the download part to buildtime, runtime uid is also unknown here
 
 ~~~~shell
 chmod -R 777 ./MyDediServer
