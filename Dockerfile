@@ -23,13 +23,6 @@ RUN chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}"
 USER ${USER}
 WORKDIR ${HOMEDIR}
 
-# download the game itself
-RUN "${STEAMCMDDIR}/steamcmd.sh" \
-    +force_install_dir "${STEAMAPPDIR}" \
-    +login anonymous \
-    +app_update "${STEAMAPPID}" \
-    +quit
-
 # create folder for server settings specified in runtime
 RUN mkdir -p "${HOMEDIR}/.klei/DoNotStarveTogether"
 
