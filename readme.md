@@ -32,6 +32,9 @@ docker run \
     -it dst-dedicated
 ~~~~
 
+### Modding
+
+Follow the instructions in `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
 
 ## Known Issues
 
