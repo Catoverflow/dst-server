@@ -6,7 +6,7 @@ Visit https://accounts.klei.com/account/game/servers?game=DontStarveTogether
 
 Type in cluster name, choose download settings, extract the zip file to `./MyDediServer`
 
-You can adjust server settings specified in `.ini` files and DST world settings in `.lua` ones. Especially make sure the ports specified in `Caves/server.ini` and `Master/server.ini` correctly exposed below.
+You can adjust server settings specified in `.ini` files and DST world settings in `.lua` ones. Especially make sure the ports specified in `Caves/server.ini` and `Master/server.ini` are correctly exposed below.
 
 ## Build and Run
 
