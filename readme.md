@@ -36,6 +36,8 @@ docker run \
 
 Follow the instructions in `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
 
+For mod settings, you can configure them in DST GUI and ship the settings in `~/.klel/DoNotStarveTogether/MyDediServer/[Master|Cave]/modoverrides.lua`
+
 ## Known Issues
 
 - Mapping different ports for cave server will make it unusable. Once you enter the cave you will be locked out, as the master server keeps redirecting you to inaccessible cave server port outside the container.
