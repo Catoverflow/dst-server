@@ -20,7 +20,7 @@ chmod -R 777 ./MyDediServer
 
 You can pull this script from docker hub: `catoverflow/dst-server`, or build yourself:
 
-> Change the arguments according to your settings. Base location is by default set to `/home/steam` in steamcmd.
+> Change the arguments according to your settings.
 
 ~~~~shell
 docker build . -t dst-dedicated:latest
@@ -37,6 +37,15 @@ docker run \
 Follow the instructions in `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
 
 For mod settings, you can configure them in DST GUI and ship the settings in `~/.klel/DoNotStarveTogether/MyDediServer/[Master|Cave]/modoverrides.lua`
+
+## Manage DST CLI
+
+[Tmux](https://www.redhat.com/sysadmin/introduction-tmux-linux) is used in multi-process managements. A `DST-dedicated` session is created with window `Master` and `Cave` responsible for Master (main world) and Cave server.
+
+~~~~shell
+docker exec -it dst-dedicated "tmux attach -t DST-dedicated"
+# then use ^C-b + [0|1] to switch between Master and Cave cli
+~~~~
 
 ## Known Issues
 
