@@ -23,13 +23,13 @@ You can pull this script from docker hub: `catoverflow/dst-server`, or build you
 > Change the arguments according to your settings.
 
 ~~~~shell
-docker build . -t dst-dedicated:latest
+docker pull catoverflow/dst-server
 docker run \
     -p 10999:10999/udp \
     -p 11000:11000/udp \
     -v $(pwd)/MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer \
-    --name dst-dedicated \
-    -it dst-dedicated
+    --name dst-server \
+    -it catoverflow/dst-server
 ~~~~
 
 ### Modding
@@ -40,7 +40,7 @@ For mod settings, you can configure them in DST GUI and ship the settings in `~/
 
 ## Manage DST CLI
 
-[Tmux](https://www.redhat.com/sysadmin/introduction-tmux-linux) is used in multi-process managements. A `DST-dedicated` session is created with window `Master` and `Cave` responsible for Master (main world) and Cave server.
+[Tmux](https://www.redhat.com/sysadmin/introduction-tmux-linux) is used in multi-process management. A `DST-dedicated` session is created with window `Master` and `Cave` responsible for Master (main world) and Cave server.
 
 ~~~~shell
 docker exec -it dst-dedicated "tmux attach -t DST-dedicated"
