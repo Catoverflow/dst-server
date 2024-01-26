@@ -18,33 +18,30 @@ Change the permission for mounted config and save files.
 chmod -R 777 ./MyDediServer
 ~~~~
 
-You can pull this script from docker hub: `catoverflow/dst-server`, or build yourself:
-
-> Change the arguments according to your settings.
+> Change the ports according to your settings. By default 10999 for Master and 11000 for Cave.
 
 ~~~~shell
-docker pull catoverflow/dst-server
 docker run \
     -p 10999:10999/udp \
     -p 11000:11000/udp \
     -v $(pwd)/MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer \
-    --name dst-server \
+    --name dst-dedicated 
     -it catoverflow/dst-server
 ~~~~
 
 ### Modding
 
-Follow the instructions in `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
+Follow the instructions in container at `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
 
-For mod settings, you can configure them in DST GUI and ship the settings in `~/.klel/DoNotStarveTogether/MyDediServer/[Master|Cave]/modoverrides.lua`
+For mod settings, you can configure them in DST GUI and ship the settings at `~/.klel/DoNotStarveTogether/MyDediServer/[Master|Cave]/modoverrides.lua`
 
 ## Manage DST CLI
 
 [Tmux](https://www.redhat.com/sysadmin/introduction-tmux-linux) is used in multi-process management. A `DST-dedicated` session is created with window `Master` and `Cave` responsible for Master (main world) and Cave server.
 
 ~~~~shell
-docker exec -it dst-dedicated "tmux attach -t DST-dedicated"
-# then use ^C-b + [0|1] to switch between Master and Cave cli
+docker attach dst-dedicated
+# then use ^C-b + [0|1] to switch between Master and Cave tmux windows, ^C-p + q to detach from container
 ~~~~
 
 ## Known Issues

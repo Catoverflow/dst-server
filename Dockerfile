@@ -12,7 +12,7 @@ ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 RUN set -x && \
     dpkg --add-architecture i386 && \
     apt-get update && \
-    apt-get install -y libcurl4-gnutls-dev:i386
+    apt-get install -y libcurl4-gnutls-dev:i386 tmux
 
 COPY entry.sh "${HOMEDIR}/entry.sh"
 RUN chmod +x "${HOMEDIR}/entry.sh"

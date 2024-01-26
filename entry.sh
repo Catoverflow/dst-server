@@ -12,6 +12,6 @@ bash "${STEAMCMDDIR}/steamcmd.sh" \
 
 # launch master and cave server
 cd ${STEAMAPP}-dedicated/bin
-tmux new-session -s -d DST-dedicated -n Master ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master
-tmux new-window -d -n Cave -t DST-dedicated: ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Caves
-sleep infinity
+# in case the server exits keeps the tmux window open
+tmux new-session -d -s DST-dedicated -n Master "./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master; bash -i"
+tmux new-window -d -n Cave -t DST-dedicated: "./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Caves; bash -i"
