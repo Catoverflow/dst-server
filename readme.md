@@ -47,6 +47,13 @@ docker attach dst-dedicated
 # then use ^C-b + [0|1] to switch between Master and Cave tmux windows, ^C-p + q to detach from container
 ~~~~
 
+## Docker Build instructions
+Image can be built using regular docker build commands, however, If you are on an ARM machine (Apple Silicon or other) you will need to use buildx. The following command is an example of how to build the image using buildx on an ARM device for amd 64. And ofc, after building, you'll need to tag your image for push. Enjoy.
+
+~~~~shell
+docker buildx build . --load --platform linux/amd64
+~~~~
+
 ## Known Issues
 
 - Mapping different ports for cave server will make it unusable. Once you enter the cave you will be locked out, as the master server keeps redirecting you to inaccessible cave server port outside the container.
