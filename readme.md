@@ -29,19 +29,29 @@ docker run \
     -it catoverflow/dst-server
 ~~~~
 
+An example docker compose yaml file is also included.
+
 ### Modding
 
 Follow the instructions in container at `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
 
 For mod settings, you can configure them in DST GUI and ship the settings at `~/.klel/DoNotStarveTogether/MyDediServer/[Master|Cave]/modoverrides.lua`
 
-## Manage DST CLI
+## DEPRECATED - Tmux is not recommended as this method forces you to -it in to the container and also prevent docker compose yamls from being used. Only left here for reference.
+## Manage DST CLI 
 
 [Tmux](https://www.redhat.com/sysadmin/introduction-tmux-linux) is used in multi-process management. A `DST-dedicated` session is created with window `Master` and `Cave` responsible for Master (main world) and Cave server.
 
 ~~~~shell
 docker attach dst-dedicated
 # then use ^C-b + [0|1] to switch between Master and Cave tmux windows, ^C-p + q to detach from container
+~~~~
+
+## Docker Build instructions
+Image can be built using regular docker build commands, however, If you are on an ARM machine (Apple Silicon or other) you will need to use buildx. The following command is an example of how to build the image using buildx on an ARM device for amd 64. And ofc, after building, you'll need to tag your image for push. Enjoy.
+
+~~~~shell
+docker buildx build . --load --platform linux/amd64
 ~~~~
 
 ## Known Issues

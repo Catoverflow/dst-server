@@ -1,0 +1,9 @@
+version: "3"
+services:
+  dst-server:
+    image: catoverflow/dst-server:latest
+    ports:
+      - 10999:10999/udp
+      - 11000:11000/udp
+    volumes:
+      - /home/MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer

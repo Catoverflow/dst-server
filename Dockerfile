@@ -5,6 +5,7 @@
 
 FROM cm2network/steamcmd:root
 
+ENV HOMEDIR /home/steam
 ENV STEAMAPPID 343050
 ENV STEAMAPP dst
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
