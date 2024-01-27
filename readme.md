@@ -29,13 +29,16 @@ docker run \
     -it catoverflow/dst-server
 ~~~~
 
+An example docker compose yaml file is also included.
+
 ### Modding
 
 Follow the instructions in container at `/home/steam/dst-dedicated/mods/dedicated_server_mods_setup.lua`
 
 For mod settings, you can configure them in DST GUI and ship the settings at `~/.klel/DoNotStarveTogether/MyDediServer/[Master|Cave]/modoverrides.lua`
 
-## Manage DST CLI
+## DEPRECATED - Tmux is not recommended as this method forces you to -it in to the container and also prevent docker compose yamls from being used. Only left here for reference.
+## Manage DST CLI 
 
 [Tmux](https://www.redhat.com/sysadmin/introduction-tmux-linux) is used in multi-process management. A `DST-dedicated` session is created with window `Master` and `Cave` responsible for Master (main world) and Cave server.
 
